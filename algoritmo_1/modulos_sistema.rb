@@ -1,3 +1,4 @@
+# Algoritmo 1 - Grafo de dependencia de módulos de um sistema.
 # Teste Michael Lins para vaga Dev Rails/Ruby
 # Empresa MESA http://mesainc.com.br/
 
@@ -16,7 +17,7 @@ class ModulosSistema
     @modulos.flatten!
   end
 
-  def mapear_todos
+  def mapear_todos_os_modulos
     return "Não há módulos cadastrados para sistema '#{@nome_sistema}'" if @modulos.empty?
     mapear_a_partir_de @modulos.first
   end

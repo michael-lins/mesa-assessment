@@ -1,3 +1,4 @@
+# Algoritmo 1 - Grafo de dependencia de módulos de um sistema.
 # Teste Michael Lins para vaga Dev Rails/Ruby
 # Empresa MESA http://mesainc.com.br/
 

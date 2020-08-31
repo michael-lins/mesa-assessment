@@ -14,10 +14,10 @@ modulos = []
 8.times do |m|
   modulos << Modulo.new("Módulo #{m}")
 end
+
 # dependencias dos modulos
 modulos[3].depende_de(modulos[0])
-modulos[5]
-  .depende_de(modulos[3])
+modulos[5].depende_de(modulos[3])
 modulos[2].depende_de(modulos[1])
 modulos[6]
   .depende_de(modulos[2])
@@ -30,7 +30,12 @@ modulos[7]
 sistema_mesa.inserir modulos
 
 # imprime mapeamento dos modulos com dependencias
-modulos_mapeados = sistema_mesa.mapear_todos
-modulos_mapeados.each do |pos_mod, modulo|
-  puts "Carregando módulo #{modulo}...ok"
+modulos_mapeados = sistema_mesa.mapear_todos_os_modulos
+
+if modulos_mapeados.is_a? Hash
+  modulos_mapeados.each do |pos_mod, modulo|
+    puts "Carregando módulo #{modulo}...ok"
+  end
+else
+  puts modulos_mapeados
 end
