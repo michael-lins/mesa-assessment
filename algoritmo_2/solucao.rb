@@ -58,8 +58,10 @@ vertices[7]
   .adiciona_aresta(vertices[4], 9)
   .adiciona_aresta(vertices[5], 5)
 
-menor_caminho = grafo.menor_caminho_entre(vertices[0], vertices[6])
-
-custo_caminho = grafo.custo_caminho(menor_caminho)
-
-puts "Vertex, Cost, Path -> #{menor_caminho.count}, #{custo_caminho}, #{menor_caminho.map(&:to_s).join("-")}"
+# Imprime menor caminho de 0 para todos os outros
+origem = 0
+(1..7).each do |destino|
+  menor_caminho = grafo.menor_caminho_entre(vertices[origem], vertices[destino])
+  custo_caminho = grafo.custo_caminho(menor_caminho)
+  puts "Path from #{origem} to #{destino}: Vertex, Cost, Path -> #{menor_caminho.count}, #{custo_caminho}, #{menor_caminho.map(&:to_s).join("-")}"
+end
