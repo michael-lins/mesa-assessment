@@ -157,7 +157,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   listen (~> 3.2)
-  pg (>= 0.18, < 2.0)
+  pg
   puma (~> 4.1)
   rails!
   spring
